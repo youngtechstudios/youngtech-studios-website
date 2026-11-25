@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YoungTech Studios</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #bbb;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.slides {
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.slides h2 {
+    margin-bottom: 30px;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+    animation: fade 0.7s;
+}
+
+.slide img {
+    width: 100%;
+    max-width: 850px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.slide h3 {
+    margin: 20px;
+    font-size: 25px;
+}
+
+.slide p {
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 13px 22px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dots {
+    margin: 15px;
+}
+
+.dot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: #555;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: white;
+}
+
+.contact {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #333;
+    color: #aaa;
+}
+
+@keyframes fade {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .slide img {
+        height: 240px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">YOUNGTECH STUDIOS</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#work">Our Work</a>
+        <a href="#about">About Us +</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Building Tomorrow,<br>One Website at a Time.</h1>
+    <p>We create modern digital experiences for tomorrow's businesses.</p>
+    <a href="#work" class="btn">Explore Our Work</a>
+</section>
+
+<section class="slides" id="work">
+    <h2>OUR FOUR FEATURED SLIDES</h2>
+
+    <div class="slide active">
+        <a href="https://www.google.com" target="_blank">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Web development">
+        </a>
+        <h3>01 — Web Development</h3>
+        <p>Building modern websites for the digital world.</p>
+    </div>
+
+    <div class="slide">
+        <a href="https://www.google.com" target="_blank">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" alt="Business websites">
+        </a>
+        <h3>02 — Business Websites</h3>
+        <p>Helping businesses build their online presence.</p>
+    </div>
+
+    <div class="slide">
+        <a href="https://www.google.com" target="_blank">
+            <img src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=1200" alt="Creative design">
+        </a>
+        <h3>03 — Creative Design</h3>
+        <p>Beautiful designs with a professional touch.</p>
+    </div>
+
+    <div class="slide">
+        <a href="https://www.google.com" target="_blank">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200" alt="Technology team">
+        </a>
+        <h3>04 — Future Technology</h3>
+        <p>Exploring ideas and building tomorrow.</p>
+    </div>
+
+    <div class="controls">
+        <button onclick="changeSlide(-1)">❮ Previous</button>
+        <button onclick="changeSlide(1)">Next ❯</button>
+    </div>
+
+    <div class="dots">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+        <span class="dot" onclick="showSlide(3)"></span>
+    </div>
+</section>
+<section id="about" style="
+    padding: 80px 10%;
+    text-align: center;
+    background: #111;
+">
+    <h2 style="font-size: 35px; margin-bottom: 25px;">
+        ABOUT YOUNGTECH STUDIOS
+    </h2>
+
+    <p style="
+        color: #bbb;
+        max-width: 750px;
+        margin: auto;
+        line-height: 1.9;
+        font-size: 17px;
+    ">
+        YoungTech Studios is a creative digital brand focused on
+        building modern, beautiful and user-friendly websites.
+
+        Our mission is to help businesses establish their online
+        presence through technology, creativity and innovation.
+
+        We believe in building tomorrow, one website at a time.
+    </p>
+
+    <h3 style="margin-top: 30px;">
+        BUILDING THE FUTURE THROUGH TECHNOLOGY.
+    </h3>
+</section>
+<section class="slides" id="work">
+    <h2>LET'S BUILD SOMETHING GREAT.</h2>
+    <p style="margin:20px;color:#bbb;">Ready to take your business online?</p>
+    <a class="btn" href="mailto:youngtechstudios1@gmail.com">Contact Us</a>
+</section>
+
+<footer>
+    <p>© 2026 YoungTech Studios</p>
+    <p style="margin-top:10px;">Building Tomorrow, One Website at a Time.</p>
+</footer><section class="contact" id="contact">
+    <h2>LET'S BUILD SOMETHING GREAT.</h2>
+
+    <p style="margin:20px;color:#bbb;">
+        Ready to take your business online?
+    </p>
+
+    <p style="margin:20px;">
+        Email: youngtechstudios1@gmail.com
+    </p>
+
+    <a class="btn"
+       href="mailto:youngtechstudios1@gmail.com">
+       Email YoungTech Studios
+    </a>
+</section>
+
+<script>
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+    slides[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
+
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+}
+
+function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+}
+
+setInterval(function() {
+    changeSlide(1);
+}, 4000);
+</script>
+
+</body>
+</html>
